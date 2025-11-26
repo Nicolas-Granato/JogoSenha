@@ -87,7 +87,6 @@ bool comparadorDeSenha(int senhaMaquina,int senhaDoUsuario){
         return false;
     }
 
-
     return true;
 }
 
