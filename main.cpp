@@ -14,16 +14,23 @@ int main(){
         cin >> variavelDeInicializacao;
     }
     
-    while (variavelDeInicializacao = 1){
+    while (variavelDeInicializacao == 1){
     
         cout << "Escolha uma dificuldade:" << endl;  
         cout << "1 - Facil(10 tentativas)\n2 - Medio(7 tentativas)\n3 - Dificil(4 tentativas)" << endl;
         cin >> nivelDeDificuldade;
 
+        while (nivelDeDificuldade != 1 && nivelDeDificuldade != 2 && nivelDeDificuldade != 3){
+        cout << "ERRO: Opcao inexistente..." << endl;
+        cout << "1 - Facil(10 tentativas)\n2 - Medio(7 tentativas)\n3 - Dificil(4 tentativas)" << endl;
+        cin >> nivelDeDificuldade;
+        }
+
         cout << "Gerando senha aleatoria..." << endl;
         int senhaMaquina = geradorDeSenha();
         cout << senhaMaquina << endl;
         
+        cout << "Escreva uma senha de 4 digitos, e que seus numeros estejam entre 1 e 6." << endl;
         for (int i = 0; i < nivelDeDificuldade; i++){
             int senhaUsuario = gerarSenhaUsuario();
             
@@ -42,7 +49,7 @@ int main(){
             cout << "ERRO: Opcao inexistente..." << endl;
             cout << "1 - jogar novamente             0 - fechar o jogo" << endl;
             cin >> variavelDeInicializacao;
-    }
+        }
     }
 
     return 0;

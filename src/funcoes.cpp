@@ -21,7 +21,6 @@ int geradorDeSenha(){
 int gerarSenhaUsuario(){
     int senha, num1, num2, num3 ,num4;
     
-    cout << "Escreva uma senha de 4 digitos, e que seus numeros estejam entre 1 e 6." << endl;
     cin >> senha;
 
     num1 = senha/1000;
@@ -66,7 +65,7 @@ bool compararSenhas(int senhaMaquina,int senhaUsuario){
     
     if (n2Maquina!=n2Usuario){
         if (n2Usuario == n1Maquina || n2Usuario == n3Maquina || n2Usuario == n4Maquina){
-            res3 = '_';
+            res2 = '_';
         } 
         res2 = 'X';
     }
