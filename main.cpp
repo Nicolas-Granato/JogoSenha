@@ -31,16 +31,17 @@ int main(){
         cout << senhaMaquina << endl;
         
         cout << "Escreva uma senha de 4 digitos, e que seus numeros estejam entre 1 e 6." << endl;
-        for (int i = 0; i < nivelDeDificuldade; i++){
+        for (int i = 0; i < selecaoNivel(nivelDeDificuldade); i++){
             int senhaUsuario = gerarSenhaUsuario();
             
             bool resposta = compararSenhas(senhaMaquina, senhaUsuario);
             
             if (resposta == true){
-                cout << "Parabens!!!\nVocê venceu o jogo!" << endl;
+                cout << "Parabens!!!\nVoce venceu o jogo!" << endl;
                 break;
             }
         }
+        
 
         cout << "Deseja Jogar mais uma vez?(1 - jogar novamente             0 - fechar o jogo)" << endl;
         cin >> variavelDeInicializacao;

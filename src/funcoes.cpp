@@ -59,38 +59,56 @@ bool compararSenhas(int senhaMaquina,int senhaUsuario){
     if (n1Maquina!=n1Usuario){
         if (n1Usuario == n2Maquina || n1Usuario == n3Maquina || n1Usuario == n4Maquina){
             res1 = '_';
-        } 
-        res1 = 'X';
+        } else {
+            res1 = 'X';
+        }
     }
     
     if (n2Maquina!=n2Usuario){
         if (n2Usuario == n1Maquina || n2Usuario == n3Maquina || n2Usuario == n4Maquina){
             res2 = '_';
-        } 
-        res2 = 'X';
+        } else {
+            res2 = 'X';
+        }
     }
 
     if (n3Maquina!=n3Usuario){
         if (n3Usuario == n1Maquina || n3Usuario == n2Maquina || n3Usuario == n4Maquina){
             res3 = '_';
-        } 
-        res3 = 'X';
+        } else {
+            res3 = 'X';
+        }
     }
 
     if (n4Maquina!=n4Usuario){
         if (n4Usuario == n1Maquina || n4Usuario == n2Maquina || n4Usuario == n3Maquina){
             res4 = '_';
-        } 
-        res4 = 'X';
+        } else {
+            res4 = 'X';
+        }
     }
 
-    if (res1 != 'O' && res2 != 'O' && res3 != 'O' && res4 != 'O'){
-        cout << res1 << res2 << res3 << res4 << endl;
-
-        return false;
+    if (res1 == 'O' && res2 == 'O' && res3 == 'O' && res4 == 'O'){
+        return true;
     }
 
-    return true;
+    cout << res1 << res2 << res3 << res4 << endl;
+
+    return false;
 }
 
+int selecaoNivel(int nivelDeDificuldade){
+    int tentativas;
+    
+    if (nivelDeDificuldade == 1){
+        tentativas = 10;
+    }
+    if (nivelDeDificuldade == 2){
+        tentativas = 7;
+    }
+    if (nivelDeDificuldade == 3){
+        tentativas = 4;
+    }
 
+    return tentativas;
+}
