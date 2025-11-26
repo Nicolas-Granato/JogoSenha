@@ -3,7 +3,7 @@
 using namespace std;
 
 int geradorDeSenha();
-int senhaUsuario();
-bool comparadorDeSenha(int senhaMaquina,int senhaDoUsuario);
+int gerarSenhaUsuario();
+bool compararSenhas(int senhaMaquina,int senhaDoUsuario);
 
 #endif
