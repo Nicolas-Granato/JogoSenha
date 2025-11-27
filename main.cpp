@@ -5,7 +5,7 @@ using namespace std;
 int main(){
     int variavelDeInicializacao, nivelDeDificuldade;
 
-    cout << "Inicio Jogo Senha\n1 - iniciar             0 - fechar o jogo" << endl;
+    cout << "---Inicio Jogo Senha---\n1 - iniciar             0 - fechar o jogo" << endl;
     cin >> variavelDeInicializacao;
 
     while (variavelDeInicializacao != 1 && variavelDeInicializacao != 0){
@@ -29,6 +29,7 @@ int main(){
         cout << "Gerando senha aleatoria..." << endl;
         int senhaMaquina = geradorDeSenha();
         cout << senhaMaquina << endl;
+
         
         cout << "Escreva uma senha de 4 digitos, e que seus numeros estejam entre 1 e 6." << endl;
         for (int i = 0; i < selecaoNivel(nivelDeDificuldade); i++){
@@ -53,6 +54,8 @@ int main(){
             cin >> variavelDeInicializacao;
         }
     }
+
+    cout << "Saindo do jogo..." << endl;
 
     return 0;
 }
