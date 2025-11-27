@@ -1,5 +1,5 @@
-#ifndef AUTENTICATOR_H
-#define AUTENTICATOR_H
+#ifndef AUTENTICADOR_H
+#define AUTENTICADOR_H
 using namespace std;
 
 int geradorDeSenha();
