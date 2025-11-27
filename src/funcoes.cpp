@@ -42,57 +42,59 @@ int gerarSenhaUsuario(){
     return senha;
 }
 
-bool compararSenhas(int senhaMaquina,int senhaUsuario){
-    int n1Usuario, n2Usuario, n3Usuario, n4Usuario, n1Maquina, n2Maquina, n3Maquina, n4Maquina;
-    char res1 = 'O', res2 = 'O', res3 = 'O' , res4 = 'O';
+bool compararSenhas(int senhaMaquina, int senhaUsuario) {
+    int m1 = senhaMaquina / 1000;
+    int m2 = (senhaMaquina / 100) % 10;
+    int m3 = (senhaMaquina / 10) % 10;
+    int m4 = senhaMaquina % 10;
 
-    n1Usuario = senhaUsuario/1000;
-    n2Usuario = (senhaUsuario/100)%10;
-    n3Usuario = (senhaUsuario/10)%10;
-    n4Usuario = senhaUsuario%10;
+    int u1 = senhaUsuario / 1000;
+    int u2 = (senhaUsuario / 100) % 10;
+    int u3 = (senhaUsuario / 10) % 10;
+    int u4 = senhaUsuario % 10;
 
-    n1Maquina = senhaMaquina/1000;
-    n2Maquina = (senhaMaquina/100)%10;
-    n3Maquina = (senhaMaquina/10)%10;
-    n4Maquina = senhaMaquina%10;
+    char res1 = '_', res2 = '_', res3 = '_', res4 = '_';
+    int acertos_O = 0;
 
-    if (n1Maquina!=n1Usuario){
-        if (n1Usuario == n2Maquina || n1Usuario == n3Maquina || n1Usuario == n4Maquina){
-            res1 = 'X';
-        } else {
-            res1 = '_';
-        }
-    }
-    
-    if (n2Maquina!=n2Usuario){
-        if (n2Usuario == n1Maquina || n2Usuario == n3Maquina || n2Usuario == n4Maquina){
-            res2 = 'X';
-        } else {
-            res2 = '_';
-        }
+    if (u1 == m1) { res1 = 'O'; u1 = 0; m1 = 0; acertos_O++; }
+    if (u2 == m2) { res2 = 'O'; u2 = 0; m2 = 0; acertos_O++; }
+    if (u3 == m3) { res3 = 'O'; u3 = 0; m3 = 0; acertos_O++; }
+    if (u4 == m4) { res4 = 'O'; u4 = 0; m4 = 0; acertos_O++; }
+
+    if (acertos_O == 4) {
+        cout << "OOOO" << endl;
+        return true;
     }
 
-    if (n3Maquina!=n3Usuario){
-        if (n3Usuario == n1Maquina || n3Usuario == n2Maquina || n3Usuario == n4Maquina){
-            res3 = 'X';
-        } else {
-            res3 = '_';
-        }
+    if (u1 > 0) {
+        if (u1 == m1 && m1 > 0) { res1 = 'X'; m1 = 0; }
+        else if (u1 == m2 && m2 > 0) { res1 = 'X'; m2 = 0; }
+        else if (u1 == m3 && m3 > 0) { res1 = 'X'; m3 = 0; }
+        else if (u1 == m4 && m4 > 0) { res1 = 'X'; m4 = 0; }
     }
 
-    if (n4Maquina!=n4Usuario){
-        if (n4Usuario == n1Maquina || n4Usuario == n2Maquina || n4Usuario == n3Maquina){
-            res4 = 'X';
-        } else {
-            res4 = '_';
-        }
+    if (u2 > 0) {
+        if (u2 == m1 && m1 > 0) { res2 = 'X'; m1 = 0; }
+        else if (u2 == m2 && m2 > 0) { res2 = 'X'; m2 = 0; }
+        else if (u2 == m3 && m3 > 0) { res2 = 'X'; m3 = 0; }
+        else if (u2 == m4 && m4 > 0) { res2 = 'X'; m4 = 0; }
+    }
+
+    if (u3 > 0) {
+        if (u3 == m1 && m1 > 0) { res3 = 'X'; m1 = 0; }
+        else if (u3 == m2 && m2 > 0) { res3 = 'X'; m2 = 0; }
+        else if (u3 == m3 && m3 > 0) { res3 = 'X'; m3 = 0; }
+        else if (u3 == m4 && m4 > 0) { res3 = 'X'; m4 = 0; }
+    }
+
+    if (u4 > 0) {
+        if (u4 == m1 && m1 > 0) { res4 = 'X'; m1 = 0; }
+        else if (u4 == m2 && m2 > 0) { res4 = 'X'; m2 = 0; }
+        else if (u4 == m3 && m3 > 0) { res4 = 'X'; m3 = 0; }
+        else if (u4 == m4 && m4 > 0) { res4 = 'X'; m4 = 0; }
     }
 
     cout << res1 << res2 << res3 << res4 << endl;
-
-    if (res1 == 'O' && res2 == 'O' && res3 == 'O' && res4 == 'O'){
-        return true;
-    }
 
     return false;
 }
