@@ -5,7 +5,7 @@ using namespace std;
 int main(){
     int variavelDeInicializacao, nivelDeDificuldade;
 
-    cout << "------------- Inicio Jogo Senha -------------\n1 - Iniciar            0 - Fechar o jogo" << endl;
+    cout << "------------- Inicio Jogo da Senha -------------\n1 - Iniciar            0 - Fechar o jogo" << endl;
     cin >> variavelDeInicializacao;
 
     while (cin.fail()){
@@ -22,6 +22,9 @@ int main(){
     }
     
     while (variavelDeInicializacao == 1){
+
+        cout << "\nBem vindo ao Jogo da Senha\n\nO computador gerou uma senha de 4 digitos.\nCada digito e um numero entre 1 e 6." << endl;
+        cout << "\nSeu objetivo e descobrir a senha!\n" << endl;
     
         cout << "Escolha uma dificuldade:" << endl;  
         cout << "1 - Facil(10 tentativas)\n2 - Medio(7 tentativas)\n3 - Dificil(4 tentativas)" << endl;
@@ -40,9 +43,8 @@ int main(){
             cin >> nivelDeDificuldade;
         }
 
-        cout << "Gerando senha aleatoria..." << endl;
+        cout << "\nGerando senha aleatoria...\n" << endl;
         int senhaMaquina = geradorDeSenha();
-        
        
         for (int i = 0; i < selecaoNivel(nivelDeDificuldade); i++){
             int senhaUsuario = gerarSenhaUsuario();

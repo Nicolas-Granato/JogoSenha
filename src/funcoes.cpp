@@ -26,7 +26,7 @@ int gerarSenhaUsuario()
 
     while (true)
     {
-        cout << "Digite uma senha de 4 digitos (apenas de 1 a 6): ";
+        cout << "Digite uma senha de 4 digitos (contendo valores entre 1 e 6): ";
         cin >> senha;
 
         while (cin.fail()){
