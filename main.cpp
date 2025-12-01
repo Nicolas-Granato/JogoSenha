@@ -28,8 +28,6 @@ int main(){
 
         cout << "Gerando senha aleatoria..." << endl;
         int senhaMaquina = geradorDeSenha();
-        cout << senhaMaquina << endl;
-
         
         cout << "Escreva uma senha de 4 digitos, e que seus numeros estejam entre 1 e 6." << endl;
         for (int i = 0; i < selecaoNivel(nivelDeDificuldade); i++){
@@ -41,6 +39,7 @@ int main(){
                 break;
             }
             if (i == selecaoNivel(nivelDeDificuldade) - 1){
+                cout << "A senha era: " << senhaMaquina << endl;
                 cout << "Infelizmente nao foi dessa vez..." << endl;
             }
         }
