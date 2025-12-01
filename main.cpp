@@ -5,12 +5,12 @@ using namespace std;
 int main(){
     int variavelDeInicializacao, nivelDeDificuldade;
 
-    cout << "---Inicio Jogo Senha---\n1 - iniciar             0 - fechar o jogo" << endl;
+    cout << "------------- Inicio Jogo Senha -------------\n1 - Iniciar            0 - Fechar o jogo" << endl;
     cin >> variavelDeInicializacao;
 
     while (variavelDeInicializacao != 1 && variavelDeInicializacao != 0){
         cout << "ERRO: Opcao inexistente..." << endl;
-        cout << "1 - iniciar             0 - fechar o jogo" << endl;
+        cout << "1 - Iniciar             0 - Fechar o jogo" << endl;
         cin >> variavelDeInicializacao;
     }
     
@@ -29,13 +29,13 @@ int main(){
         cout << "Gerando senha aleatoria..." << endl;
         int senhaMaquina = geradorDeSenha();
         
-        cout << "Escreva uma senha de 4 digitos, e que seus numeros estejam entre 1 e 6." << endl;
+       
         for (int i = 0; i < selecaoNivel(nivelDeDificuldade); i++){
             int senhaUsuario = gerarSenhaUsuario();
             bool resposta = compararSenhas(senhaMaquina, senhaUsuario);
 
             if (resposta){
-                cout << "Parabens!!!\nVoce venceu o jogo" << endl; 
+                cout << "Parabens!!!\nVoce venceu o jogo!!!" << endl; 
                 break;
             }
             if (i == selecaoNivel(nivelDeDificuldade) - 1){
@@ -44,12 +44,12 @@ int main(){
             }
         }
 
-        cout << "Deseja Jogar mais uma vez?(1 - jogar novamente             0 - fechar o jogo)" << endl;
+        cout << "Deseja Jogar mais uma vez?\n(1 - Jogar novamente             0 - Fechar o jogo)" << endl;
         cin >> variavelDeInicializacao;
 
         while (variavelDeInicializacao != 1 && variavelDeInicializacao != 0){
             cout << "ERRO: Opcao inexistente..." << endl;
-            cout << "1 - jogar novamente             0 - fechar o jogo" << endl;
+            cout << "1 - Jogar novamente             0 - Fechar o jogo" << endl;
             cin >> variavelDeInicializacao;
         }
     }
