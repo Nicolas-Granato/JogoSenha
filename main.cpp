@@ -8,6 +8,13 @@ int main(){
     cout << "------------- Inicio Jogo Senha -------------\n1 - Iniciar            0 - Fechar o jogo" << endl;
     cin >> variavelDeInicializacao;
 
+    while (cin.fail()){
+            cin.clear();
+            cin.ignore(1000, '\n');
+            cout << "ERRO: Digite apenas numeros!" << endl;
+            cin >> variavelDeInicializacao;
+    }        
+
     while (variavelDeInicializacao != 1 && variavelDeInicializacao != 0){
         cout << "ERRO: Opcao inexistente..." << endl;
         cout << "1 - Iniciar             0 - Fechar o jogo" << endl;
@@ -20,10 +27,17 @@ int main(){
         cout << "1 - Facil(10 tentativas)\n2 - Medio(7 tentativas)\n3 - Dificil(4 tentativas)" << endl;
         cin >> nivelDeDificuldade;
 
+        while (cin.fail()){
+            cin.clear();
+            cin.ignore(1000, '\n');
+            cout << "ERRO: Digite apenas numeros!" << endl;
+            cin >> nivelDeDificuldade;
+        }  
+
         while (nivelDeDificuldade != 1 && nivelDeDificuldade != 2 && nivelDeDificuldade != 3){
-        cout << "ERRO: Opcao inexistente..." << endl;
-        cout << "1 - Facil(10 tentativas)\n2 - Medio(7 tentativas)\n3 - Dificil(4 tentativas)" << endl;
-        cin >> nivelDeDificuldade;
+            cout << "ERRO: Opcao inexistente..." << endl;
+            cout << "1 - Facil(10 tentativas)\n2 - Medio(7 tentativas)\n3 - Dificil(4 tentativas)" << endl;
+            cin >> nivelDeDificuldade;
         }
 
         cout << "Gerando senha aleatoria..." << endl;
@@ -46,6 +60,13 @@ int main(){
 
         cout << "Deseja Jogar mais uma vez?\n(1 - Jogar novamente             0 - Fechar o jogo)" << endl;
         cin >> variavelDeInicializacao;
+
+        while (cin.fail()){
+            cin.clear();
+            cin.ignore(1000, '\n');
+            cout << "ERRO: Digite apenas numeros!" << endl;
+            cin >> variavelDeInicializacao;
+        }    
 
         while (variavelDeInicializacao != 1 && variavelDeInicializacao != 0){
             cout << "ERRO: Opcao inexistente..." << endl;

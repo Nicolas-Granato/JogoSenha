@@ -29,12 +29,11 @@ int gerarSenhaUsuario()
         cout << "Digite uma senha de 4 digitos (apenas de 1 a 6): ";
         cin >> senha;
 
-        if (cin.fail())
-        {
+        while (cin.fail()){
             cin.clear();
             cin.ignore(1000, '\n');
             cout << "ERRO: Digite apenas numeros!" << endl;
-            continue;
+            cin >> senha;
         }
 
         if (senha < 1000 || senha > 9999)
