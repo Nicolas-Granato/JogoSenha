@@ -17,4 +17,4 @@ A cada tentativa, o sistema fornece dicas indicando se os números digitados est
 ---
 
 <p>- Nícolas Granato [Nicolas-Granato] - Matrícula: 202576016 </br>
-- Eduardo Maia [Eduardofontainha]</p>
+- Eduardo Maia [Eduardofontainha] - Matrícula: 202576029</p>
